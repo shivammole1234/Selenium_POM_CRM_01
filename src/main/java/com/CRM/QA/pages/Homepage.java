@@ -25,7 +25,11 @@ public class Homepage extends TestBase {
      @FindBy(xpath = "//a[normalize-space()='Deals']")
     WebElement dealsLink;
 
-     @FindBy(xpath = "//a[normalize-space()='Tasks']")
+    @FindBy(xpath = "//a[normalize-space()='New Deal']")
+    WebElement newDealsLink;
+
+
+    @FindBy(xpath = "//a[normalize-space()='Tasks']")
     WebElement tasksLink;
 
     //@FindBy(xpath = "//a[contains(text(),'New Contact')]")
@@ -91,9 +95,6 @@ public class Homepage extends TestBase {
         // WebElement newContactLink = driver.findElement(By.xpath("//a[contains(text(),'New Contact')]"));
         js.executeScript("arguments[0].click();", newContactsLink);
 
-//        Actions action = new Actions(driver);
-//        action.moveToElement(contactsLink).build().perform();
-//        newcontactLink.click();
 
     }
     public void clickOnNewContactLink1() {
@@ -112,6 +113,12 @@ public class Homepage extends TestBase {
         } else {
             System.out.println("Element not clickable.");
         }
+    }
+
+    public void clickOnNewDealsLink() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.querySelector(\"a[title='Deals']\").dispatchEvent(new Event('mouseover'))");
+        js.executeScript("arguments[0].click();", newDealsLink);
     }
 
 

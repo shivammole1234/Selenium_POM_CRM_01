@@ -28,7 +28,7 @@ public class ContactPage extends TestBase {
     WebElement nickName;
 
     @FindBy(name = "client_lookup")
-    WebElement clientLookup;
+    WebElement companyName;
 
     @FindBy(id="company_position")
     WebElement companyPosition;
@@ -38,6 +38,7 @@ public class ContactPage extends TestBase {
 
     @FindBy(name="contact_lookup_sup")
     WebElement contactLookupSup;
+
 
 
     @FindBy(name="contact_lookup_ass")
@@ -104,7 +105,6 @@ public class ContactPage extends TestBase {
         boolean isContactLabelDisplayed = contactTitle.isDisplayed();
         System.out.println("Contact label is displayed: " + isContactLabelDisplayed);
         return contactTitle.isDisplayed();
-
     }
 
 
@@ -134,7 +134,7 @@ public class ContactPage extends TestBase {
         lastName.sendKeys(last_Name);
         nickName.sendKeys(nick_Name);
         System.out.println("Nick name is: "+nick_Name);
-        clientLookup.sendKeys(client_Lookup);
+        companyName.sendKeys(client_Lookup);
         companyPosition.sendKeys(company_Position);
         department_WE.sendKeys(department);
         System.out.println("Department is: "+department);
@@ -202,7 +202,7 @@ public class ContactPage extends TestBase {
 
         firstName.sendKeys(ftName);
         lastName.sendKeys(ltName);
-        companyPosition.sendKeys(comp);
+        companyName.sendKeys(comp);
         saveButton.click();
 
     }

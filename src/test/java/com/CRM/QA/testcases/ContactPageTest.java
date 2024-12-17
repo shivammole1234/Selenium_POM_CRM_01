@@ -91,9 +91,10 @@ public class ContactPageTest extends TestBase {
     @Test(priority = 4, dataProvider = "getCRMTestData")
     public void createNewContactTest22(String title,String firstName, String lastName,String company){
         homePage.clickOnNewContactLink();
-        contactPage.create_new_contact_2("Mr.", "Tom", "Peter", "Google");
-      //  contactPage.create_new_contact_2(title,firstName,lastName,company);
+        //contactPage.create_new_contact_2("Mr.", "Tom", "Peter", "Google");
+        contactPage.create_new_contact_2(title,firstName,lastName,company);
     }
+
 
     @AfterMethod
     public void tearDown(){
